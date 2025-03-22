@@ -1,0 +1,28 @@
+{
+  "files": {
+    "main.css": "/aaxi/static/css/main.c5f22288.css",
+    "main.js": "/aaxi/static/js/main.c76b3664.js",
+    "static/js/453.f8c1bf5e.chunk.js": "/aaxi/static/js/453.f8c1bf5e.chunk.js",
+    "static/media/location.mp4": "/aaxi/static/media/location.83857428f2f05e578b86.mp4",
+    "static/media/welding.jpg": "/aaxi/static/media/welding.5734dacf78a2cd6994fa.jpg",
+    "static/media/cutting.jpg": "/aaxi/static/media/cutting.355e2f02c47b4c5153c4.jpg",
+    "static/media/finishing.jpg": "/aaxi/static/media/finishing.dfe28843ac60450ebd37.jpg",
+    "static/media/cta-background.jpg": "/aaxi/static/media/cta-background.cd770981225ea843822c.jpg",
+    "static/media/about-preview.jpg": "/aaxi/static/media/about-preview.939519660daa8799a1a2.jpg",
+    "static/media/about.jpg": "/aaxi/static/media/about.939519660daa8799a1a2.jpg",
+    "static/media/assembly.jpg": "/aaxi/static/media/assembly.24dae610f26aa7638233.jpg",
+    "static/media/project1.jpg": "/aaxi/static/media/project1.894f05d58864a80be6b1.jpg",
+    "static/media/project3.jpg": "/aaxi/static/media/project3.da9345a8f6945d4c36c4.jpg",
+    "static/media/logo-white.png": "/aaxi/static/media/logo-white.896a94aba472f4de7d47.png",
+    "static/media/logo.png": "/aaxi/static/media/logo.896a94aba472f4de7d47.png",
+    "static/media/project2.jpg": "/aaxi/static/media/project2.3870acbf86c544a13a31.jpg",
+    "index.html": "/aaxi/index.html",
+    "main.c5f22288.css.map": "/aaxi/static/css/main.c5f22288.css.map",
+    "main.c76b3664.js.map": "/aaxi/static/js/main.c76b3664.js.map",
+    "453.f8c1bf5e.chunk.js.map": "/aaxi/static/js/453.f8c1bf5e.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.c5f22288.css",
+    "static/js/main.c76b3664.js"
+  ]
+}
