@@ -24,7 +24,6 @@ function Contact() {
   return (
     <section id="contact" className="contact-page">
       <Helmet>
-        <title>Contact Us - AAXI</title>
         <meta name="description" content="Contact AAXI for custom metal fabrication services." />
       </Helmet>
       <h1 className="contact-title">Contact Us</h1>
