@@ -1,0 +1,24 @@
+{
+  "files": {
+    "main.css": "/aaxi/static/css/main.d1d6ff41.css",
+    "main.js": "/aaxi/static/js/main.19f473df.js",
+    "static/media/location.mp4": "/aaxi/static/media/location.83857428f2f05e578b86.mp4",
+    "static/media/about.jpg": "/aaxi/static/media/about.a4f89e043f5d3cef6424.jpg",
+    "static/media/project5.jpg": "/aaxi/static/media/project5.5734dacf78a2cd6994fa.jpg",
+    "static/media/project1.jpg": "/aaxi/static/media/project1.9926b9a84697e09a7445.jpg",
+    "static/media/project3.jpg": "/aaxi/static/media/project3.8e0862248a837cfb113f.jpg",
+    "static/media/project4.jpg": "/aaxi/static/media/project4.5585f84217fdb73a8533.jpg",
+    "static/media/cta-background.jpg": "/aaxi/static/media/cta-background.0aa16a1a562dc0eb14b9.jpg",
+    "static/media/project6.jpg": "/aaxi/static/media/project6.b1845640a7398b47472f.jpg",
+    "static/media/project2.jpg": "/aaxi/static/media/project2.24dae610f26aa7638233.jpg",
+    "static/media/about-preview.jpg": "/aaxi/static/media/about-preview.e6b0dbb218d538496023.jpg",
+    "static/media/logo.png": "/aaxi/static/media/logo.896a94aba472f4de7d47.png",
+    "index.html": "/aaxi/index.html",
+    "main.d1d6ff41.css.map": "/aaxi/static/css/main.d1d6ff41.css.map",
+    "main.19f473df.js.map": "/aaxi/static/js/main.19f473df.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.d1d6ff41.css",
+    "static/js/main.19f473df.js"
+  ]
+}
