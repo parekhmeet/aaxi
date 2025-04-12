@@ -4,11 +4,11 @@ import Header from './components/Header';
 import Footer from './components/Footer';
 import Home from './pages/Home';
 import About from './pages/About';
-import FeaturedProjects from './pages/FeaturedProjects';
+//import FeaturedProjects from './pages/FeaturedProjects';
 //import Testimonials from './pages/Testimonials';
 import CallToAction from './pages/CallToAction';
 import Services from './pages/Services';
-import Projects from './pages/Projects';
+//import Projects from './pages/Projects';
 import Contact from './pages/Contact';
 import './App.css';
 
@@ -27,18 +27,14 @@ function App() {
           <section id="services">
             <Services />
           </section>
-          <section id="featured-projects">
-            <FeaturedProjects />
-          </section>
+          {/* Featured Projects section removed */}
           {/* <section id="testimonials">
             <Testimonials />
           </section> */}
           <section id="cta">
             <CallToAction />
           </section>
-          <section id="projects">
-            <Projects />
-          </section>
+          {/* Projects section removed */}
           <section id="contact">
             <Contact />
           </section>

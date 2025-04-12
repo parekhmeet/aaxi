@@ -58,12 +58,6 @@ function Home() {
           </motion.div>
         </div>
       </section>
-      
-      {/* Removed Featured Projects Section */}
-      
-      {/* Removed Testimonials Section */}
-      
-      {/* Removed Call to Action Section */}
     </div>
   );
 }
