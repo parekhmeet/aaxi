@@ -51,7 +51,7 @@ function Contact() {
           <h1>Get in Touch</h1>
           <p>We’re here to help. Chat to our friendly team 24/7 and get set up and ready to go in just 5 minutes.</p>
           <div className="contact-links">
-            <a href="tel:+11234567890">
+            <a href="tel:+17059942294">
               <i className="fas fa-phone-volume"></i> Call us now
             </a>
             <a href="mailto:info@aaxi.ca">

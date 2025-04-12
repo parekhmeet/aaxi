@@ -3,8 +3,8 @@
   justify-content: space-between;
   align-items: center;
   padding: 15px 40px;
-  background-color: #EDEDED; /* Changed from #EDEDED */
-  color: #171717; /* Changed from #171717 */
+  background-color: #171717; /* Changed from #EDEDED */
+  color: #EDEDED; /* Changed from #171717 */
   position: fixed;
   top: 0;
   left: 0;
@@ -16,7 +16,7 @@
 
 .header.scrolled {
   padding: 10px 40px;
-  background-color:  #EDEDED; /* Changed from rgba(237, 237, 237, 0.95) */
+  background-color:  #171717; /* Changed from rgba(237, 237, 237, 0.95) */
   backdrop-filter: blur(10px);
 }
 
@@ -38,7 +38,7 @@
   color: #EDEDED; /* Changed from #171717 */
   margin-left: 10px;
   letter-spacing: -1px;
-  background: linear-gradient(45deg, #171717, #999999); /* Changed gradient colors for visibility */
+  background: linear-gradient(45deg, #EDEDED, #ffffff); /* Changed gradient colors for visibility */
   background-clip: text;
   -webkit-background-clip: text;
   color: transparent;
@@ -57,6 +57,11 @@
   height: 50px;
   width: auto;
   transition: all 0.3s ease;
+  filter: brightness(0) invert(1); /* Makes the logo white */
+}
+
+.logo a:hover .logo-image {
+  filter: brightness(0) saturate(100%) invert(12%) sepia(88%) saturate(5786%) hue-rotate(342deg) brightness(94%) contrast(100%); /* Changes to #DA0037 red on hover */
 }
 
 .scrolled .logo-image {
@@ -78,7 +83,7 @@
 .nav-links li a {
   text-decoration: none;
   font-weight: 600;
-  color: #171717; /* Lightened from #444444 for better visibility */
+  color: #EDEDED; /* Lightened from #444444 for better visibility */
   text-transform: uppercase;
   transition: all 0.3s;
   font-size: 0.9rem;
