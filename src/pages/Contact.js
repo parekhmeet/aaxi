@@ -106,7 +106,7 @@ function Contact() {
           <p>We're here to help. Chat to our friendly team 24/7 and get set up and ready to go in just 5 minutes.</p>
           <div className="contact-links">
             <a href="tel:+17059942294">
-              <i className="fas fa-phone-volume"></i> Call us now
+              <i className="fas fa-phone-volume"></i> Call us now | +1 (705) 994-2294
             </a>
             <a href="mailto:info@aaxi.ca">
               <i className="fas fa-envelope"></i> Shoot us an email
