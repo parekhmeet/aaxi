@@ -80,12 +80,8 @@
   font-size: 0.9rem;
   background-color: #222; /* Darkened for contrast */
   color: #EDEDED; /* Changed text color */
-}
-
-.footer-input-container {
-  position: relative;
-  width: 100%;
-  margin-bottom: 10px;
+  width: 100%; /* Make input full width to match button */
+  box-sizing: border-box; /* Ensure padding is included in width calculation */
 }
 
 .footer-input-error {
@@ -116,6 +112,8 @@
   border: none;
   border-radius: 4px;
   cursor: pointer;
+  width: 100%; /* Make button full width to match input */
+  box-sizing: border-box; /* Ensure padding is included in width calculation */
 }
 
 .footer-button:hover {
