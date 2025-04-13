@@ -3,6 +3,8 @@ import { Helmet } from 'react-helmet-async';
 import './Contact.css';
 
 function Contact() {
+  const MAX_MESSAGE_LENGTH = 500; // Set maximum character limit for message
+  
   const [formState, setFormState] = useState({
     firstName: '',
     lastName: '',
@@ -10,15 +12,60 @@ function Contact() {
     phone: '',
     message: '',
   });
+  const [errors, setErrors] = useState({});
   const [result, setResult] = useState("");
+
+  // Validation functions
+  const validateEmail = (email) => {
+    const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    return re.test(String(email).toLowerCase());
+  };
+  
+  const validatePhone = (phone) => {
+    // Allow empty phone (since it's optional) or validate format
+    return !phone || /^[\d\+\-\(\) ]{10,15}$/.test(phone);
+  };
 
   const handleChange = (e) => {
     const { name, value } = e.target;
+    
+    // For message field, enforce character limit
+    if (name === "message" && value.length > MAX_MESSAGE_LENGTH) {
+      return; // Don't update if exceeding limit
+    }
+    
     setFormState((prev) => ({ ...prev, [name]: value }));
+    
+    // Validate on change
+    if (name === "email") {
+      setErrors(prev => ({ 
+        ...prev, 
+        email: value && !validateEmail(value) ? "Please enter a valid email address" : "" 
+      }));
+    } else if (name === "phone") {
+      setErrors(prev => ({ 
+        ...prev, 
+        phone: value && !validatePhone(value) ? "Please enter a valid phone number" : "" 
+      }));
+    }
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    
+    // Validate all fields before submission
+    const newErrors = {
+      email: formState.email && !validateEmail(formState.email) ? "Please enter a valid email address" : "",
+      phone: formState.phone && !validatePhone(formState.phone) ? "Please enter a valid phone number" : "",
+    };
+    
+    setErrors(newErrors);
+    
+    // If there are errors, don't submit
+    if (Object.values(newErrors).some(error => error)) {
+      return;
+    }
+    
     setResult("Sending...");
     const formData = new FormData(e.target);
 
@@ -34,6 +81,13 @@ function Contact() {
     if (data.success) {
       setResult("Form Submitted Successfully");
       e.target.reset();
+      setFormState({
+        firstName: '',
+        lastName: '',
+        email: '',
+        phone: '',
+        message: '',
+      });
     } else {
       console.log("Error", data);
       setResult(data.message);
@@ -49,7 +103,7 @@ function Contact() {
       <div className="contact-container">
         <div className="contact-form-section">
           <h1>Get in Touch</h1>
-          <p>We’re here to help. Chat to our friendly team 24/7 and get set up and ready to go in just 5 minutes.</p>
+          <p>We're here to help. Chat to our friendly team 24/7 and get set up and ready to go in just 5 minutes.</p>
           <div className="contact-links">
             <a href="tel:+17059942294">
               <i className="fas fa-phone-volume"></i> Call us now
@@ -76,31 +130,46 @@ function Contact() {
               onChange={handleChange}
               required
             />
-            <input
-              type="email"
-              name="email"
-              placeholder="Email"
-              value={formState.email}
-              onChange={handleChange}
-              required
-            />
-            <input
-              type="tel"
-              name="phone"
-              placeholder="Phone number"
-              value={formState.phone}
-              onChange={handleChange}
-            />
-            <textarea
-              name="message"
-              placeholder="Message"
-              value={formState.message}
-              onChange={handleChange}
-              required
-            ></textarea>
+            <div className="input-container">
+              <input
+                type="email"
+                name="email"
+                placeholder="Email"
+                value={formState.email}
+                onChange={handleChange}
+                required
+                className={errors.email ? "error" : ""}
+              />
+              {errors.email && <span className="error-message">{errors.email}</span>}
+            </div>
+            <div className="input-container">
+              <input
+                type="tel"
+                name="phone"
+                placeholder="Phone number"
+                value={formState.phone}
+                onChange={handleChange}
+                className={errors.phone ? "error" : ""}
+              />
+              {errors.phone && <span className="error-message">{errors.phone}</span>}
+            </div>
+            <div className="textarea-container">
+              <textarea
+                name="message"
+                placeholder="Message"
+                value={formState.message}
+                onChange={handleChange}
+                required
+              ></textarea>
+              <div className="character-count">
+                <span className={formState.message.length > MAX_MESSAGE_LENGTH * 0.9 ? "near-limit" : ""}>
+                  {formState.message.length}/{MAX_MESSAGE_LENGTH}
+                </span>
+              </div>
+            </div>
             <button type="submit">Send Message</button>
           </form>
-          <span>{result}</span>
+          <span className="result-message">{result}</span>
         </div>
         <div className="map-container">
           <iframe

@@ -210,6 +210,54 @@
   text-align: center;
 }
 
+.input-container {
+  grid-column: span 1;
+  position: relative;
+  width: 100%;
+}
+
+.textarea-container {
+  grid-column: span 2;
+  position: relative;
+  width: 100%;
+}
+
+input.error, textarea.error {
+  border: 1px solid #DA0037;
+}
+
+.error-message {
+  color: #DA0037;
+  font-size: 0.8rem;
+  position: absolute;
+  bottom: -18px;
+  left: 0;
+}
+
+.character-count {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  font-size: 0.75rem;
+  color: #999;
+  background: rgba(68, 68, 68, 0.7);
+  padding: 2px 8px;
+  border-radius: 10px;
+}
+
+.near-limit {
+  color: #DA0037;
+  font-weight: bold;
+}
+
+.result-message {
+  display: block;
+  text-align: center;
+  margin-top: 15px;
+  color: #EDEDED;
+  font-weight: 500;
+}
+
 @media (max-width: 768px) {
   .contact-page {
     flex-direction: column;
@@ -250,5 +298,10 @@
   .map-container {
     min-height: 400px; /* Adjust height for mobile */
     max-width: 100%; /* Take full width on mobile */
+  }
+
+  .input-container,
+  .textarea-container {
+    grid-column: span 1;
   }
 }
