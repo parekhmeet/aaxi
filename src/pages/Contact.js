@@ -23,7 +23,7 @@ function Contact() {
   
   const validatePhone = (phone) => {
     // Allow empty phone (since it's optional) or validate format
-    return !phone || /^[\d\+\-\(\) ]{10,15}$/.test(phone);
+    return !phone || /^[\d+\-() ]{10,15}$/.test(phone);
   };
 
   const handleChange = (e) => {

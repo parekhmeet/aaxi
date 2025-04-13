@@ -1,11 +1,46 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Footer.css";
 
 const Footer = () => {
+  const [email, setEmail] = useState("");
+  const [emailError, setEmailError] = useState("");
+  const [submitMessage, setSubmitMessage] = useState("");
+
+  const validateEmail = (email) => {
+    const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    return re.test(String(email).toLowerCase());
+  };
+
+  const handleEmailChange = (e) => {
+    const value = e.target.value;
+    setEmail(value);
+    
+    if (!value || validateEmail(value)) {
+      setEmailError("");
+    }
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    
+    if (!email) {
+      setEmailError("Email is required");
+      return;
+    }
+    
+    if (!validateEmail(email)) {
+      setEmailError("Please enter a valid email address");
+      return;
+    }
+    
+    setEmailError("");
+    setSubmitMessage("Thank you for subscribing!");
+    setEmail("");
+  };
+
   return (
     <footer className="footer-container">
       <div className="footer-top">
-        {/* Left Column: Brand/Theme Info */}
         <div className="footer-col">
           <h2 className="footer-title">AAXI</h2>
           <p className="footer-description">
@@ -13,7 +48,6 @@ const Footer = () => {
           </p>
         </div>
 
-        {/* Middle Column 1: Navigation */}
         <div className="footer-col">
           <h3 className="footer-subtitle">Navigation</h3>
           <ul className="footer-links">
@@ -24,7 +58,6 @@ const Footer = () => {
           </ul>
         </div>
 
-        {/* Middle Column 2: Services */}
         <div className="footer-col">
           <h3 className="footer-subtitle">Services</h3>
           <ul className="footer-links">
@@ -35,27 +68,31 @@ const Footer = () => {
           </ul>
         </div>
 
-        {/* Right Column: Stay Connected */}
         <div className="footer-col">
           <h3 className="footer-subtitle">Stay Connected</h3>
           <p className="footer-description">
             Stay connected and receive our latest tips and updates.
           </p>
-          <form className="footer-form">
-            <input
-              type="email"
-              className="footer-input"
-              placeholder="Enter your email"
-              required
-            />
+          <form className="footer-form" onSubmit={handleSubmit}>
+            <div className="footer-input-container">
+              <input
+                type="email"
+                className={`footer-input ${emailError ? "footer-input-error" : ""}`}
+                placeholder="Enter your email"
+                value={email}
+                onChange={handleEmailChange}
+                required
+              />
+              {emailError && <span className="footer-error-message">{emailError}</span>}
+            </div>
             <button type="submit" className="footer-button">
               Sign Up
             </button>
+            {submitMessage && <span className="footer-success-message">{submitMessage}</span>}
           </form>
         </div>
       </div>
 
-      {/* Footer Bottom */}
       <div className="footer-bottom">
         <p>Copyright © 2025. <span>AAXI</span>. All Rights Reserved.</p>
         <ul className="footer-bottom-links">

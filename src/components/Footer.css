@@ -82,6 +82,32 @@
   color: #EDEDED; /* Changed text color */
 }
 
+.footer-input-container {
+  position: relative;
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.footer-input-error {
+  border: 1px solid #DA0037;
+}
+
+.footer-error-message {
+  color: #DA0037;
+  font-size: 0.8rem;
+  display: block;
+  margin-top: 5px;
+  text-align: left;
+}
+
+.footer-success-message {
+  color: #4caf50;
+  font-size: 0.85rem;
+  display: block;
+  margin-top: 10px;
+  text-align: center;
+}
+
 .footer-button {
   background-color: #DA0037; /* Remains unchanged */
   color: #EDEDED; /* Changed from #fff */
